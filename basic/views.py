@@ -28,12 +28,12 @@ def index(request):
         }
     }
 
-    result = {
-        'statusCode': 200,
-        'body': result_dict,
-        'headers': {
-            'Access-Control-Allow-Origin': '*',
-        },
-    }
-    return HttpResponse(json.dumps(result),
+   # result = {
+   #     'statusCode': 200,
+   #     'body': json.dumps(result_dict, ensure_ascii=False),
+   #     'headers': {
+   #         'Access-Control-Allow-Origin': '*',
+   #     },
+   # }
+    return HttpResponse(json.dumps(result_dict),
                         content_type=u"text/json-comment-filtered; charset=utf-8")  # return dict
