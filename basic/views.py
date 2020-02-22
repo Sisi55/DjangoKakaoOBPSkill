@@ -1,10 +1,11 @@
-from django.http import JsonResponse
+from django.http import HttpResponse
 import pandas as pd
+import json
 
 
 def index(request):
-    # request_body = json.loads(request['body'])
-    symptom = request['action']['params']['symptom']
+    request_body = json.loads(request.body)
+    symptom = request_body['action']['params']['symptom']
 
     df = pd.read_csv('https://dsc-winter-nlp.s3.ap-northeast-2.amazonaws.com/vitamin22.csv', encoding='CP949')
     del df['Unnamed: 2']
@@ -34,4 +35,5 @@ def index(request):
             'Access-Control-Allow-Origin': '*',
         },
     }
-    return JsonResponse(result)  # return dict
+    return HttpResponse(json.dumps(result),
+                        content_type=u"text/json-comment-filtered; charset=utf-8")  # return dict
