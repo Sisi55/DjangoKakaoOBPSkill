@@ -1,6 +1,5 @@
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse
 import pandas as pd
-# import numpy as np
 import json
 
 
@@ -95,6 +94,5 @@ def list(request):
     }
     }
 
-    # 최대 5개 list 형식 출력
     return HttpResponse(json.dumps(result_dict),
                         content_type=u"text/json-comment-filtered; charset=utf-8")  # return dict

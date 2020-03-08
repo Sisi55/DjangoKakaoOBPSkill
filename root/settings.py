@@ -24,7 +24,7 @@ SECRET_KEY = 'zd-n4%l+vapv-na(1g7=n=#d$)jg9d@q#cpp0x)*ifj#^)g%76'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
