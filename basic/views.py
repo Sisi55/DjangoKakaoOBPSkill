@@ -45,7 +45,7 @@ def list(request):
     age = request_body['action']['params']['age']
     sex = request_body['action']['params']['sex']
 
-    df = pd.read_excel('https://dsc-winter-nlp.s3.ap-northeast-2.amazonaws.com/sisi_vita.xlsx',
+    df = pd.read_excel('https://dsc-winter-nlp.s3.ap-northeast-2.amazonaws.com/sisi_vita_final.xlsx',
                        encoding='CP949', error_bad_lines=False)
     # age 필터링 and sex 필터링
     cond_sex = df['sex'] == sex
